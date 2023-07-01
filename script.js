@@ -4,7 +4,7 @@ const resultGrid = document.getElementById('result-grid');
 
 // load characters from API
 async function loadChars(query){
-    const URL = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${query}&ts=20230223&apikey=665f3e098b0add46f6e04a580c4311f8&hash=01ec05119412c4ef3bf78aa6b212a4810a9a7236`
+    const URL = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${query}&ts=20230223&apikey=6975c12f0f2ae6702c6d26349ef557fc&hash=0fb6598929d1b35a0704e51b09eaacdc`
     const response = await fetch(`${URL}`);
     const data = await response.json();
     console.log(data.data.results);
@@ -60,7 +60,7 @@ function loadCharDetails(){
         character.addEventListener('click' ,async()=>{
             searchConstList.className = ('hide-search-list');
             charSearchBox.value = "";
-            const result = await fetch(`https://gateway.marvel.com:443/v1/public/characters/${character.dataset.id}?ts=20230223&apikey=665f3e098b0add46f6e04a580c4311f8&hash=01ec05119412c4ef3bf78aa6b212a4810a9a7236`)
+            const result = await fetch(`https://gateway.marvel.com:443/v1/public/characters/${character.dataset.id}?ts=20230223&apikey=6975c12f0f2ae6702c6d26349ef557fc&hash=0fb6598929d1b35a0704e51b09eaacdc`)
             const charDetails = await result.json();
             console.log(charDetails);
             addtoFavs(charDetails);
@@ -107,7 +107,7 @@ function getFavs(){
 // HomePage Hero Load 
 
 async function homeLoadHeros(query){
-    const URL = 'https://gateway.marvel.com:443/v1/public/characters?ts=20230223&apikey=665f3e098b0add46f6e04a580c4311f8&hash=01ec05119412c4ef3bf78aa6b212a4810a9a7236';
+    const URL = 'https://gateway.marvel.com:443/v1/public/characters?ts=20230223&apikey=6975c12f0f2ae6702c6d26349ef557fc&hash=0fb6598929d1b35a0704e51b09eaacdc';
     const response = await fetch(`${URL}`);
     const data = await response.json();
   //  console.log(data.data.results);
